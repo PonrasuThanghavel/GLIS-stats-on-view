@@ -1,0 +1,29 @@
+.record-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.record-list {
+    margin-bottom: 20px;
+}
+
+.record-list h1 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold; /* Making headings bold */
+}
+
+.record-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.record-list ul li {
+    margin-bottom: 5px;
+    margin-left: 20px; /* Adding left margin for tab spacing */
+}
+
+/* Add more styles as needed */

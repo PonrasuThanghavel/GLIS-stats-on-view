@@ -1,0 +1,100 @@
+/* Basic styling for the input and select elements */
+input[type="text"],
+select {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling for the search input */
+input[type="text"] {
+  width: 300px;
+}
+
+/* Styling for the sort select */
+select {
+  width: 150px;
+}
+
+/* Basic styling for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Basic styling for table header */
+th {
+  background-color: #f2f2f2;
+  border: 1px solid #dddddd;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Styling for table header when hovered */
+th:hover {
+  background-color: #ddd;
+}
+
+/* Basic styling for table data cells */
+td {
+  border: 1px solid #dddddd;
+  padding: 12px;
+}
+
+/* Styling for table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Styling for table rows when hovered */
+tr:hover {
+  background-color: #ddd;
+}
+
+/* Styling for the link in the details column */
+td > a {
+  text-decoration: none;
+  color: blue;
+  cursor: pointer;
+}
+
+/* Styling for the link in the details column when hovered */
+td > a:hover {
+  text-decoration: underline;
+}
+
+
+/* tableview.css */
+
+/* Search container */
+.search-container {
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+/* Search input */
+.search-input {
+  width: 250px; /* Adjust width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px; /* Add margin between input and select */
+}
+
+/* Select dropdown */
+.sort-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff; /* Set background color */
+}
+
+/* Apply flex layout for search container */
+.search-container {
+  display: flex;
+  align-items: center;
+}
