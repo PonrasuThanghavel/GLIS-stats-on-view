@@ -7,7 +7,7 @@
   import Recordview from './components/recordview.jsx';
   import LoginPage from './components/login/login.jsx';
   import SignUp from './components/login/signup.jsx';
-  import User from './components/login/user.jsx';
+  // import User from './components/login/user.jsx';
   import Map from './components/Dasboard/maplinking.jsx';
   import Landview from './components/agri/landview.jsx';
   import Landform from './components/agri/landform.jsx'
