@@ -1,4 +1,8 @@
 /* dashboard.css */
+.dashboard{
+  margin: auto;
+}
+
 .graph-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 

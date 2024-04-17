@@ -1,29 +1,49 @@
-.record-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.RecordView {
+    margin: 15px;
+    padding: 10px;
+    border: 3px groove lightslategrey;
+    border-radius: 50px;
     background-color: #f9f9f9;
+    overflow: hidden;
 }
 
-.record-list {
-    margin-bottom: 20px;
+.loading-animation{
+    height: fit-content;
 }
 
-.record-list h1 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    font-weight: bold; /* Making headings bold */
-}
-
-.record-list ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.record-list ul li {
+.record-list-header{
+    margin: auto;
+    margin-left: 20px;
     margin-bottom: 5px;
-    margin-left: 20px; /* Adding left margin for tab spacing */
+    font-size: 18px;
 }
 
-/* Add more styles as needed */
+.record-table{
+    margin: auto;
+    width: 95%;
+}
+
+.record-table-head{
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    text-align: center;
+    cursor: default;
+}
+
+.record-table-row{
+    background-color: #fff;
+    cursor: default;
+}
+
+.record-table-row:hover{
+    background-color: #eee;
+    transform: scale(1.01);
+    transition-property: transform, background-color;
+    transition: 0.7s ease-in-out;
+}
+
+.record-table-data{
+    padding: 4px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}

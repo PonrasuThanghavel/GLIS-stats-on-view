@@ -42,6 +42,7 @@ const SignUp = () => {
       console.log(formData);
       console.log('Response from server:', response.data);
       navigate('/login');
+      // Handle successful signup here, such as redirecting to another page (use appropriate navigation library)
     } catch (error) {
       setError('Failed to sign up');
       console.error('Error signing up:', error);

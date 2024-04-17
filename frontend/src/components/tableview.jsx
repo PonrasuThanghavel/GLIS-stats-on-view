@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Lin
-
 import './css/tableview.css'
 
 const TableView = () => {
@@ -30,12 +29,10 @@ const TableView = () => {
     setSortType(event.target.value);
   };
 
-  // Filter
   const filteredBusStations = busStations.filter((station) =>
     station.Name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Sort
   const sortedBusStations = filteredBusStations.sort((a, b) => {
     if (sortType === 'ID') {
       return a.ID - b.ID;
@@ -45,53 +42,56 @@ const TableView = () => {
       return a.Reg.localeCompare(b.Reg);
     } else if (sortType === 'Year') {
       return a.Year - b.Year;
-    }
+    } 
     return 0;
   });
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search by name..."
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-      <select value={sortType} onChange={handleSort}>
-        <option value="">Sort by...</option>
-        <option value="ID">ID</option>
-        <option value="Name">Name</option>
-        <option value="Reg">Region</option>
-        <option value="Year">Year</option>
-      </select>
-      <table>
+    <div className='TableView'>
+      <div className='search-container'>
+
+        <input
+          className='search-bar'
+          placeholder="Search By Name..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+
+        <select className='sort-btn' value={sortType} onChange={handleSort}>
+          <option value="ID">ID</option>
+          <option value="Name">Name</option>
+          <option value="Reg">Region</option>
+          <option value="Year">Year</option>
+        </select>
+      </div>
+  
+      <table className='tableview-container'>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Location Body</th>
-            <th>Region</th>
-            <th>Revenue</th>
-            <th>Commercial Zone</th>
-            <th>Year</th>
-            <th>Details</th> {/* Additional column for details */}
+            <th className='tableview-head'>ID</th>
+            <th className='tableview-head'>Name</th>
+            <th className='tableview-head'>Location Body</th>
+            <th className='tableview-head'>Region</th>
+            <th className='tableview-head'>Revenue</th>
+            <th className='tableview-head'>Commercial Zone</th>
+            <th className='tableview-head'>Year</th>
+            <th className='tableview-head'>Details</th> {/* Additional column for details */}
           </tr>
         </thead>
         <tbody>
           {sortedBusStations.map((station) => (
-            <tr key={station.ID}>
-              <td>{station.ID}</td>
-              <td>{station.Name}</td>
-              <td>{station.Local }</td>
-              <td>{station.Reg}</td>
-              <td>{station.Rev}</td>
-              <td>{station.Zone_type}</td>
-              <td>{station.Year}</td>
+            <tr className='tableview-row' key={station.ID}>
+              <td className='tableview-row-data'>{station.ID}</td>
+              <td className='tableview-row-data'>{station.Name}</td>
+              <td className='tableview-row-data'>{station.Local }</td>
+              <td className='tableview-row-data'>{station.Reg}</td>
+              <td className='tableview-row-data'>{station.Rev}</td>
+              <td className='tableview-row-data'>{station.Zone_type}</td>
+              <td className='tableview-row-data'>{station.Year}</td>
               {/* <Recordview id={station.ID} /> */}
-              <td>
+              <td className='tableview-row-data'>
                 {/* Pass ID to Recordview component */}
-                <Link to={`/RecordView/${station.ID}`}>more</Link>
-
+                <Link className='table-link' to={`/RecordView/${station.ID}`}>more</Link>
               </td>
             </tr>
            

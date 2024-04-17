@@ -51,53 +51,133 @@ const LandForm = ({ onSubmit }) => {
     };
 
     return (
-        <form className="land-form" >
-            <div className="form-group">
-                <label htmlFor="ownerName">Owner's Name:</label>
-                <input type="text" id="ownerName" name="ownerName" value={formData.ownerName} onChange={handleChange} />
+        <form className="LandForm" >
+            <h3 className="landform-header">Land Form Registration</h3>
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="ownerName">Owner's Name:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="ownerName" 
+                    name="ownerName" 
+                    value={formData.ownerName} 
+                    onChange={handleChange} 
+                />
             </div>
          
-            <div className="form-group">
-                <label htmlFor="phoneNumber">Phone Number:</label>
-                <input type="text" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="phoneNumber">Phone Number:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="phoneNumber" 
+                    name="phoneNumber" 
+                    value={formData.phoneNumber} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="contact">Contact Person:</label>
-                <input type="text" id="contact" name="contact" value={formData.contact} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="contact">Contact Person:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="contact" 
+                    name="contact" 
+                    value={formData.contact} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="address">Address:</label>
-                <input type="text" id="address" name="address" value={formData.address} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="address">Address:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="address" 
+                    name="address" 
+                    value={formData.address} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="landSize">Land Size:</label>
-                <input type="text" id="landSize" name="landSize" value={formData.landSize} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="landSize">Land Size:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="landSize" 
+                    name="landSize" 
+                    value={formData.landSize} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="soilType">Soil Type:</label>
-                <input type="text" id="soilType" name="soilType" value={formData.soilType} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="soilType">Soil Type:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="soilType" 
+                    name="soilType" 
+                    value={formData.soilType} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="cropCultivated">Crop Cultivated:</label>
-                <input type="text" id="cropCultivated" name="cropCultivated" value={formData.cropCultivated} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="cropCultivated">Crop Cultivated:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="cropCultivated" 
+                    name="cropCultivated" 
+                    value={formData.cropCultivated} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="agriculturalLoan">Agricultural Loan:</label>
-                <input type="text" id="agriculturalLoan" name="agriculturalLoan" value={formData.agriculturalLoan} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="agriculturalLoan">Agricultural Loan:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="agriculturalLoan" 
+                    name="agriculturalLoan" 
+                    value={formData.agriculturalLoan} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="latitude">Latitude:</label>
-                <input type="text" id="latitude" name="latitude" value={formData.latitude} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="latitude">Latitude:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="latitude" 
+                    name="latitude" 
+                    value={formData.latitude} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="longitude">Longitude:</label>
-                <input type="text" id="longitude" name="longitude" value={formData.longitude} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="longitude">Longitude:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="longitude" 
+                    name="longitude" 
+                    value={formData.longitude} 
+                    onChange={handleChange} 
+                />
             </div>
-            <div className="form-group">
-                <label htmlFor="cropPrice">Price of Cultivated Crop:</label>
-                <input type="text" id="cropPrice" name="cropPrice" value={formData.cropPrice} onChange={handleChange} />
+            <div className="landform-group">
+                <label className="landform-label" htmlFor="cropPrice">Price of Cultivated Crop:</label>
+                <input 
+                    className='landform-control' 
+                    type="text"
+                    id="cropPrice" 
+                    name="cropPrice" 
+                    value={formData.cropPrice} 
+                    onChange={handleChange} 
+                />
             </div>
-            <button type="submit" onClick={handleSubmit}>Submit</button>
+            <div className="landform-submit-container">
+                <button className="landform-submit-btn" type="submit" onClick={handleSubmit}>Submit</button>
+            </div>
         </form>
     );
 };
