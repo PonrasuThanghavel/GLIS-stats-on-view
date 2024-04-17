@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link,useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './css/signup.css'; // Assuming the CSS file path is correct
 
@@ -50,65 +50,82 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
+      <form className='SignUp'>
+        <h2 className='signupform-header'>Sign Up</h2>
+        <div className='signupform-group'>
+          <label className='signupform-label'>Username:</label>
           <input
+            id="Usr_name"
+            className='signupform-control'
             type="text"
             name="Usr_name"
             value={formState.Usr_name}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Email:</label>
+
+        <div className='signupform-group'>
+          <label className='signupform-label'>Email:</label>
           <input
+            id="Usr_email"
+            className='signupform-control'
             type="email"
             name="Usr_email"
             value={formState.Usr_email}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Phone:</label>
+
+        <div className='signupform-group'>
+          <label className='signupform-label'>Phone:</label>
           <input
+            id="Usr_phone"
+            className='signupform-control'
             type="text"
             name="Usr_phone"
             value={formState.Usr_phone}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Address:</label>
+
+        <div className='signupform-group'>
+          <label className='signupform-label'>Address:</label>
           <input
+            id="Usr_address"
+            className='signupform-control'
             type="text"
             name="Usr_address"
             value={formState.Usr_address}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Password:</label>
+
+        <div className='signupform-group'>
+          <label className='signupform-label'>Password:</label>
           <input
+            id="Usr_pass"
+            className='signupform-control'
             type="password"
             name="Usr_pass"
             value={formState.Usr_pass}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Confirm Password:</label>
+
+        <div className='signupform-group'>
+          <label className='signupform-label'>Confirm Password:</label>
           <input
+          
+            className='signupform-control'
             type="password"
             name="confirmPassword"
             value={formState.confirmPassword}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <label>Select Role:</label>
+
+        <div className='signupform-group'>
+          <label className='signupform-label'>Select Role:</label>
           <select name="role" value={formState.role} onChange={handleChange}>
             <option value="">Select</option>
             <option value="farmer">Farmer</option>
@@ -116,10 +133,12 @@ const SignUp = () => {
           </select>
           {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
-        <button type="submit">Sign Up</button>
+
+        <div className='signupform-submit-container'>
+          <button className='signupform-submit-btn' type='submit' onSubmit={handleSubmit}>Sign Up</button>
+        </div>
+        
       </form>
-      <p>Already have an account? <Link to="/login">Log in</Link></p>
-    </div>
   );
 };
 

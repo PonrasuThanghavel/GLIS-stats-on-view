@@ -1,0 +1,21 @@
+/* dashboard.css */
+.dashboard{
+  margin: auto;
+}
+
+.graph-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-gap: 5px; 
+}
+
+.graph-card {
+  border: 1px solid #ddd;
+  border-radius:0 0 0 0 px;
+  padding: 6px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+}
+
+.graph-card h2 {
+  margin-bottom: 8px;
+}

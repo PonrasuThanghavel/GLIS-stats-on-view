@@ -2,13 +2,13 @@
   import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
   import Navbar from './components/navbar';
-  import Dashboard from './components/Dasboard/dashboard.jsx';
+  import Dashboard from './components/Dashboard/dashboard.jsx';
   import TableView from './components/tableview.jsx';
   import Recordview from './components/recordview.jsx';
   import LoginPage from './components/login/login.jsx';
   import SignUp from './components/login/signup.jsx';
   // import User from './components/login/user.jsx';
-  import Map from './components/Dasboard/maplinking.jsx';
+  import Map from './components/Dashboard/maplinking.jsx';
   import Landview from './components/agri/landview.jsx';
   import Landform from './components/agri/landform.jsx'
 

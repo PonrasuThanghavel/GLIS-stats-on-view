@@ -9,12 +9,14 @@
   flex-direction: row;
   margin: auto;
   margin-bottom: 25px;
+  margin-top: 15px;
 }
 
 .search-bar{
   height: 25px;
   width: 300px;
   outline: none;
+  font-size: 16px;
   border: none;
   border-bottom: 2px inset blue;
   text-align: center;
@@ -28,7 +30,7 @@
   height: 25px;
   width: 75px;
   text-align: center;
-  margin: 10px 0px 0px 25px;
+  margin: 5px 0px 0px 25px;
   border-radius: 50px;
   border: 3px inset blue;
 }

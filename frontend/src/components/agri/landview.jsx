@@ -48,7 +48,7 @@ const Landview = () => {
                 <div>Error: {error}</div>
             ) : (
                 <div>
-                    <h1>Land Information</h1>
+                    <h1 className='landview-header'>Land Information</h1>
                     {landData.map((land, index) => (
                     <div key={index} className="land-info">
                     <div className="table-container">

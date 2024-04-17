@@ -1,64 +1,90 @@
-.signup-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
+/* signupform.css */
 
-h2 {
-    margin-top: 0;
-}
-
-form {
+.SignUp {
     display: flex;
     flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 100%;
-}
-
-button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-p {
-    margin-top: 15px;
+    height: 600px;
+    width: 600px;
+    margin: 25px 0px 0px 500px;
+    padding: 10px;
+    border: 3px groove #ccc;
+    border-radius: 20px;
+  }
+  
+  .signupform-img{
+    margin: auto;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .signupform-header{
+    font-size: 18px;
     text-align: center;
-}
+    margin: 10px 0px 25px 0px;
+  }
+  
+  .signupform-label{
+    width: 350px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .signupform-group {
+    display: inline-flex;
+    flex-direction: row;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 500px;
+  }
+  
+  .signupform-control{
+    font-size: 16px;
+    width: 500px;
+    height: 25px;
+    outline: none;
+    margin-left: 10px;
+    margin-right: 50px;
+    border-radius: 20px;
+    text-align: center;
+  }
 
-a {
-    color: #007bff;
-    text-decoration: none;
-}
+  .signupform-control-role{
+    font-size: 16px;
+    width: 400px;
+    height: 25px;
+    outline: none;
+    margin-left: 10px;
+    margin-right: 75px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .signupform-control::placeholder{
+    text-align: center;
+  }
+  
+  .signupform-submit-container {
+    margin: auto;
+    position: relative;
+    display: inline-block; 
+  }
+  
+  .signupform-submit-btn {
+    position: relative;
+    z-index: 1; 
+    height: 50px;
+    width: 75px; 
+    text-align: center;
+    background-color: lightskyblue;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .signupform-submit-btn:hover{
+    background-color: rgb(1, 149, 255);
+  }
 
-a:hover {
-    text-decoration: underline;
-}
-
-.error-message {
-    color: red;
-    margin-top: 5px;
-}
+  
+  

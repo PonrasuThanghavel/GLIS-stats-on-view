@@ -44,40 +44,47 @@ const LoginPage = ({ isAuthenticated, setIsAuthenticated }) => {
   return isAuthenticated ? (
     <>{/* Redirect or navigate to dashboard */}</>
   ) : (
-    <div className="body">
-      <form onSubmit={onSubmit}>
-        <img className="header-img" src="https://img.icons8.com/windows/96/17ed9f/smile-beam.png" alt="login" />
-        <h1>Login Page</h1>
-        <label htmlFor="email">Email:</label>
-        <div className="input-container">
+    <div className="Login">
+      <form className="LoginForm" onSubmit={onSubmit}>
+        <img className="loginform-img" src="https://img.icons8.com/windows/96/17ed9f/smile-beam.png" alt="login" />
+        <h1 className='loginform-header'>Login Page</h1>
+        <div className="loginform-group">
+        <label className='loginform-label' htmlFor="email">Email:</label>
           <input
             id="email"
+            className='loginform-control'
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <label htmlFor="password">Password:</label>
-        <div className="input-container">
+
+        <div className="loginform-group">
+        <label className='loginform-label' htmlFor="password">Password:</label>
           <input
             id="password"
+            className='loginform-control'
             type="password"
             placeholder="Password"
             value={pass}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="buttons-container">
-          <button id="btn-login" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Logging in...' : 'Login'}
-          </button>
+
+        <div className="loginform-submit-container">
+           <button className={`loginform-submit-btn ${isSubmitting ? 'loading' : ''}`} type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (<div class="loader">Loading...</div>) : 'Login'}
+           </button>
         </div>
-        {error && <div className="error-message">{error}</div>}
+
+
+        {error && <div className="loginform-error-msg">{error}</div>}
+        <div className="loginform-signup">
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </div>
+
       </form>
-      <div className="redirect-message">
-        Don't have an account? <Link to="/signup">Sign Up</Link>
-      </div>
     </div>
   );
 };

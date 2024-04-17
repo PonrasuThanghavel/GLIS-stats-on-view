@@ -1,41 +1,79 @@
-/* landForm.css */
+/* landform.css */
 
 .LandForm {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
     width: 600px;
-    margin: 30px 0px 0px 450px;
+    margin: 25px 0px 0px 500px;
     padding: 10px;
     border: 3px groove #ccc;
     border-radius: 20px;
-}
-
-.landform-header{
+  }
+  
+  .landform-img{
+    margin: auto;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .landform-header{
     font-size: 18px;
     text-align: center;
-}
-
-.landform-label{
-    width: 300px;
-}
-
-.landform-group {
+    margin: 10px 0px 25px 0px;
+  }
+  
+  .landform-label{
+    width: 350px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .landform-group {
     display: inline-flex;
     flex-direction: row;
     margin: auto;
+    margin-bottom: 10px;
     width: 500px;
-}
-
-.landform-control{
-    margin: auto;
+  }
+  
+  .landform-control{
+    font-size: 16px;
     width: 500px;
-    height: 10px;
+    height: 25px;
     outline: none;
-}
-
-.landform-submit-container{
-    margin: auto;
-}
-
-.landform-submit-btn{
-    padding: 5px;
+    margin-left: 10px;
+    margin-right: 50px;
     border-radius: 20px;
-}
+    text-align: center;
+  }
+  
+  .landform-control::placeholder{
+    text-align: center;
+  }
+  
+  .landform-submit-container {
+    margin: auto;
+    position: relative;
+    display: inline-block; 
+  }
+  
+  .landform-submit-btn {
+    position: relative;
+    z-index: 1; 
+    height: 50px;
+    width: 75px; 
+    text-align: center;
+    background-color: lightskyblue;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .landform-submit-btn:hover{
+    background-color: rgb(1, 149, 255);
+  }
+
+  
+  
