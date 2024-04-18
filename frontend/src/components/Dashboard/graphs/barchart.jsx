@@ -50,7 +50,7 @@ const BarChart = () => {
   };
 
   return (
-    <div className="chart-container">
+    <div className="dashboard-card">
       {loading ? (
         <div className="loading-animation">
           <Lottie animationData={loadingAnimation} loop autoplay />

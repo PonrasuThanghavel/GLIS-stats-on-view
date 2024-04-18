@@ -84,12 +84,12 @@ const LineChart = () => {
       },
     };
 
-    return <Chart options={options} series={[{ name: 'Data', data: seriesData }]} type="scatter" height={500} />;
+    return <Chart options={options} series={[{ name: 'Data', data: seriesData }]} type="scatter" height={350} />;
   };
 
   return (
-    <div className="chart-container">
-      <h2>Size vs Revenue</h2>
+    <div className="dashboard-card">
+      <h2 className='graph-card-header'>Size vs Revenue</h2>
       {renderChart()}
     </div>
   );

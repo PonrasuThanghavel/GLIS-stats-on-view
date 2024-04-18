@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Slider from 'react-slick';
 import axios from 'axios';
 import Lottie from "lottie-react";
-import './css/largespace.css';
+import './css/stats.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -50,7 +50,7 @@ const LargeSpace = () => {
   }), []);
 
   return (
-    <div className="large-space">
+    <div className="dashboard-card">
       {loading ? (
         <div className="loading-animation" ref={loadingRef}>
           {/* Lottie animation */}
@@ -63,71 +63,73 @@ const LargeSpace = () => {
               {revenueError || floodRiskError || environmentalSafetyError}
             </div>
           ) : (
-            <Slider {...sliderSettings}>
+            <Slider className='stats-slide' {...sliderSettings}>
               <div className="slide-content revenue-slide">
-                <h2>Top Revenue Areas</h2>
-                <table>
-                  <tbody>
-                    <tr>
-                      <th>Name</th>
-                      <th>Revenue</th>
-                      <th>Commercial</th>
-                      <th>Area</th>
-                      <th>Accessibility score</th>
-                    </tr>
+                <h2 className='stats-header'>Top 5 Revenue Generation Zones</h2>
+                <table className='stats-table-revenue'>
+                    <thead>
+                      <tr className='stats-table-row-header'>
+                        <th className='stats-table-head'>Name</th>
+                        <th className='stats-table-head'>Revenue</th>
+                        <th className='stats-table-head'>Commercial/Park/Industrial</th>
+                        <th className='stats-table-head'>Total Area</th>
+                        <th className='stats-table-head'>Accessibility score</th>
+                      </tr>
+                    </thead>
+                    <tbody className='stats-table-body'>
                     {topRevenueData.map((area, index) => (
-                      <tr key={index}>
-                        <td>{area.Name}</td>
-                        <td>{area.Rev}</td>
-                        <td>{area.Zone_type}</td>
-                        <td>{area.Size}</td>
-                        <td>{area.Acc_Score}</td>
+                      <tr className='stats-table-row' key={index}>
+                        <td className='stats-table-data'>{area.Name}</td>
+                        <td className='stats-table-data'>{area.Rev}</td>
+                        <td className='stats-table-data'>{area.Zone_type}</td>
+                        <td className='stats-table-data'>{area.Size}</td>
+                        <td className='stats-table-data'>{area.Acc_Score}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               <div className="slide-content flood-risk-slide">
-                <h2>Flood Risk Scores</h2>
-                <table>
+                <h2 className='stats-header'>Top 5 Flood Risk Zones</h2>
+                <table className='stats-table-flood'>
                   <tbody>
-                    <tr>
-                      <th>Name</th>
-                      <th>Flood Risk Score</th>
-                      <th>Past Flood Events</th>
-                      <th>FloodProtectionMeasures</th>
-                      <th>FloodZone</th>
+                    <tr className='stats-table-row-header'>
+                      <th className='stats-table-head'>Name</th>
+                      <th className='stats-table-head'>Flood Risk Score</th>
+                      <th className='stats-table-head'>Past Flood Events</th>
+                      <th className='stats-table-head'>Flood Protection Measures</th>
+                      <th className='stats-table-head'>Flood Zone</th>
                     </tr>
                     {floodRiskScores.map((area, index) => (
-                      <tr key={index}>
-                        <td>{area.Name}</td>
-                        <td>{area.FloodRiskScore}</td>
-                        <td>{area.HistoricalFloodEvents}</td>
-                        <td>{area.FloodProtectionMeasures}</td>
-                        <td>{area.FloodZone}</td>
+                      <tr className='stats-table-row' key={index}>
+                        <td className='stats-table-data'>{area.Name}</td>
+                        <td className='stats-table-data'>{area.FloodRiskScore}</td>
+                        <td className='stats-table-data'>{area.HistoricalFloodEvents}</td>
+                        <td className='stats-table-data'>{area.FloodProtectionMeasures}</td>
+                        <td className='stats-table-data'>{area.FloodZone}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               <div className="slide-content environmental-safety-slide">
-                <h2>Environmental Safety Data</h2>
-                <table>
+                <h2 className='stats-header'>Top 5 Environmental Safety Zones</h2>
+                <table className='stats-table-env'>
                   <tbody>
-                    <tr>
-                      <th>Name</th>
-                      <th>Air Quality Index (AQI)</th>
-                      <th>Bicycle Infrastructure</th>
-                      <th>Environmental Features</th>
-                      <th>Vegetation Cover</th>
+                    <tr className='stats-table-row-header'>
+                      <th className='stats-table-head'>Name</th>
+                      <th className='stats-table-head'>Air Quality Index (AQI)</th>
+                      <th className='stats-table-head'>Bicycle Infrastructure</th>
+                      <th className='stats-table-head'>Environmental Features</th>
+                      <th className='stats-table-head'>Vegetation Cover</th>
                     </tr>
                     {environmentalSafetyData.map((area, index) => (
-                      <tr key={index}>
-                        <td>{area.Name}</td>
-                        <td>{area.AQI}</td>
-                        <td>{area.BicycleInfrastructure}</td>
-                        <td>{area.EnvironmentalFeatures}</td>
-                        <td>{area.VegetationCover}</td>
+                      <tr className='stats-table-row' key={index}>
+                        <td className='stats-table-data'>{area.Name}</td>
+                        <td className='stats-table-data'>{area.AQI}</td>
+                        <td className='stats-table-data'>{area.BicycleInfrastructure}</td>
+                        <td className='stats-table-data'>{area.EnvironmentalFeatures}</td>
+                        <td className='stats-table-data'>{area.VegetationCover}</td>
                       </tr>
                     ))}
                   </tbody>

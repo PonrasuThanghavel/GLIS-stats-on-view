@@ -32,7 +32,7 @@ const HeatmapChart = () => {
   }, []);
 
   return (
-    <div className="heatmap-chart">
+    <div className="dashboard-card">
       {loading ? (
         <div className="loading-animation">
           <Lottie animationData={loadingAnimation} loop autoplay />

@@ -51,7 +51,7 @@ const TreemapChart = () => {
   };
   
   return (
-    <div className="chart-container">
+    <div className="dashboard-card">
       {loading ? (
         <div className="loading-animation">
           <Lottie animationData={require('../../../assets/animations/loading.json')} loop autoplay />
@@ -59,7 +59,7 @@ const TreemapChart = () => {
       ) : error ? (
         <div className="error-message">{error}</div>
       ) : (
-        <Chart options={options} series={options.series} type={options.chart.type} height={500} />
+        <Chart options={options} series={options.series} type={options.chart.type} height={400} />
       )}
     </div>
   );

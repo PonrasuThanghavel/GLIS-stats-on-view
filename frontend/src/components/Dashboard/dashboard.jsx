@@ -19,8 +19,6 @@ const Dashboard = () => {
         <PieChart title="plot" className='graph-card'/>
         <Treemap title="plot" className='graph-card'/>
         <Sample title="plot" className='graph-card'/>
-       
-
       </div>
     </div>
   );

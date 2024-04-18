@@ -41,8 +41,8 @@ const PieChart = () => {
   const series = sizeData.map(item => item.value);
 
   return (
-    <div className="chart-container">
-      <h2>Pie Chart: Size Distribution in Acres</h2>
+    <div className="dashboard-card">
+      <h2 className='graph-card-header'>Pie Chart: Size Distribution in Acres</h2>
       {loading ? (
         <div className="loading-animation">
           <Lottie animationData={require('../../../assets/animations/loading.json')} loop autoplay />
@@ -50,7 +50,7 @@ const PieChart = () => {
       ) : error ? (
         <div className="error-message">{error}</div>
       ) : (
-        <Chart options={options} series={series} type="pie" height={400} />
+        <Chart options={options} series={series} type="pie" height={350} />
       )}
     </div>
   );

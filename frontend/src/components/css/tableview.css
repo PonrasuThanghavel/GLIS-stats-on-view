@@ -80,23 +80,23 @@
 }
 
 /* Styling for table rows */
-tr:nth-child(even) {
+.tableview-row:nth-child(even) {
   background-color: #f2f2f2;
 }
 
 /* Styling for table rows when hovered */
-tr:hover {
+.tableview-row:hover {
   background-color: #ddd;
 }
 
 /* Styling for the link in the details column */
-td > a {
+.tableview-row-data > a {
   text-decoration: none;
   color: blue;
   cursor: default;
 }
 
 /* Styling for the link in the details column when hovered */
-td > a:hover {
+.tableview-row-data > a:hover {
   text-decoration: underline;
 }
