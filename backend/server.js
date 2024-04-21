@@ -7,7 +7,6 @@ const dataRoutes = require('./Routes/Inforoutes.js');
 const topRevenueRoutes = require('./Routes/toprevRoutes.js');
 const floodRiskRoutes = require('./Routes/floodriskRoutes.js');
 const enviSafetyRoutes = require('./Routes/enviRoutes.js');
-const geocodeRoutes = require('./Routes/geocodesRoutes.js');
 const usercreate=require('./Routes/usercreateroute.js');
 const Land =require('./Routes/landRoute.js');
 
@@ -37,7 +36,6 @@ app.use('/api/bus-stations', dataRoutes);
 app.use('/api/top-revenue', topRevenueRoutes);
 app.use('/api/flood-risk', floodRiskRoutes);
 app.use('/api/envi-safety', enviSafetyRoutes);
-app.use('/api/geocode', geocodeRoutes);
 app.use('/api/user',usercreate);
 app.use('/api/agri',Land);
 
