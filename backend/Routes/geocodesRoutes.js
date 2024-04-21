@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const DataModel = require('../Model/info.js');
+const BusStation = require('../Model/info.js');
 
 // Get all details for geocode
 router.get('/', async (req, res) => {
   try {
-    const geocode = await DataModel.find({});
+    const geocode = await BusStation.find({});
     res.json(geocode);
   } catch (error) {
     console.error('Error fetching geocode:', error);
