@@ -6,7 +6,7 @@ const info = new mongoose.Schema({
   Local: { type: String, required: true },
   Reg: { type: String, required: true },
   Rev: { type: String, required: true },
-  Zone_type: { type: String, required: true },
+  Zone_type: { type: String, required: true, lowercase: true },
   Year: { type: Number, required: true },
   FootTraffic: { type: Number, required: true },
   Acc_Score: { type: Number, required: true },
