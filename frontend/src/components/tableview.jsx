@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FaArrowRight } from 'react-icons/fa6';
 import { Link } from 'react-router-dom'; // Import Lin
 import './css/tableview.css'
 
@@ -91,7 +92,7 @@ const TableView = () => {
               {/* <Recordview id={station.ID} /> */}
               <td className='tableview-row-data'>
                 {/* Pass ID to Recordview component */}
-                <Link className='table-link' to={`/RecordView/${station.ID}`}>more</Link>
+                <Link className='table-link' to={`/RecordView/${station.ID}`}><FaArrowRight/></Link>
               </td>
             </tr>
            

@@ -39,7 +39,6 @@
   background-color: white;
 }
 
-
 .tableview-container {
   width: 95%;
   border-collapse: collapse;
@@ -48,7 +47,8 @@
 
 /* Basic styling for table header */
 .tableview-head {
-  background-color: #f2f2f2;
+  color: white;
+  background-color: #247BA0;
   border: 1px solid #dddddd;
   padding: 12px;
   text-align: center;
@@ -56,21 +56,22 @@
 }
 
 .tableview-row-data {
+  color: black;
   border: 1px solid #dddddd;
   padding: 10px;
   text-align: center;
 }
 
 .tableview-row{
-  background-color: #fff;
+  background-color: #60cfbd;
   cursor: default;
 }
 
 .tableview-row:hover{
   background-color: #eee;
-  transform: scale(1.01);
+  transform: scale(1.005);
   transition-property: transform, background-color;
-  transition: 0.7s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .table-link{
@@ -79,9 +80,13 @@
   cursor: default;
 }
 
+.table-link:hover{
+  color: red;
+}
+
 /* Styling for table rows */
 .tableview-row:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #247BA0;
 }
 
 /* Styling for table rows when hovered */
@@ -92,7 +97,7 @@
 /* Styling for the link in the details column */
 .tableview-row-data > a {
   text-decoration: none;
-  color: blue;
+  color: black;
   cursor: default;
 }
 

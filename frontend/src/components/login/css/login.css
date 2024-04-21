@@ -37,6 +37,7 @@
 }
 
 .loginform-control{
+  border: 2px inset lightskyblue;
   font-size: 16px;
   width: 500px;
   height: 25px;
@@ -58,18 +59,24 @@
 }
 
 .loginform-submit-btn {
+  color: white;
   position: relative;
-  z-index: 1; /* Ensure the button stays above the loader */
+  z-index: 1; 
+  font-weight: 500;
   height: 50px;
   width: 75px; 
   text-align: center;
-  background-color: lightskyblue;
+  background-color: #70C1B3;
+  border: none;
   border-radius: 20px;
   font-size: 16px;
 }
 
 .loginform-submit-btn:hover{
-  background-color: rgb(1, 149, 255);
+  background-color: #60cfbd;
+  transform: scale(1.02);
+  transition-property: background-color, transform;
+  transition: 0.4s ease-in-out;
 }
 
 .loginform-error-msg{
@@ -88,7 +95,7 @@
 .loader,
 .loader:before,
 .loader:after {
-  background: #ffffff;
+  background: lightslategrey;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
   height: 2em;
@@ -97,7 +104,7 @@
 .loader {
   width: 1em;
   height: 2em;
-  color: #ffffff;
+  color: lightslategrey;
   text-indent: -9999em;
   margin: 0 auto;
   margin-top: 3px;

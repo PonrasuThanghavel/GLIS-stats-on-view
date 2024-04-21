@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #7D4E57;
+  background-color: #247BA0;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,6 @@
 }
 
 .navbar-link {
-  border: 1px solid lightslategray;
   border-radius: 20px;
   padding: 10px;
   margin-left: 20px;
@@ -29,10 +28,12 @@
   color: white;
   transition: all 0.3s ease; 
   cursor: default;
-  background-color: #FF6B6B;
+  background-color: #70C1B3;
 }
 
 .navbar-link:hover {
-  transform: scale(1.01); 
-  color: black; 
+  background-color: #60cfbd;
+  transform: scale(1.02);
+  transition-property: background-color, transform;
+  transition: 0.4s ease-in-out;
 }

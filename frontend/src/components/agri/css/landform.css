@@ -40,6 +40,7 @@
   }
   
   .landform-control{
+    border: 2px outset #70C1B3;
     font-size: 16px;
     width: 500px;
     height: 25px;
@@ -61,18 +62,24 @@
   }
   
   .landform-submit-btn {
+    color: white;
     position: relative;
+    font-weight: 500;
     z-index: 1; 
     height: 50px;
     width: 75px; 
     text-align: center;
-    background-color: lightskyblue;
+    background-color: #70C1B3;
+    border: none;
     border-radius: 20px;
     font-size: 16px;
   }
   
   .landform-submit-btn:hover{
-    background-color: rgb(1, 149, 255);
+    background-color: #60cfbd;
+    transform: scale(1.02);
+    transition-property: background-color, transform;
+    transition: 0.4s ease-in-out;
   }
 
   

@@ -1,5 +1,5 @@
 .RecordView {
-    margin: 15px;
+    margin: 10px;
     padding: 10px;
     border: 3px groove lightslategrey;
     border-radius: 50px;
@@ -21,28 +21,35 @@
 .record-table{
     margin: auto;
     width: 95%;
+    border-collapse: collapse;
 }
 
 .record-table-head{
-    background-color: #f2f2f2;
+    color: white;
+    background-color: #247BA0;
     border: 1px solid #dddddd;
     text-align: center;
     cursor: default;
 }
 
 .record-table-row{
-    background-color: #fff;
+    background-color: #60cfbd;
     cursor: default;
 }
 
+.record-table-row:nth-child(even) {
+    background-color: #247BA0;
+}
+
 .record-table-row:hover{
-    background-color: #eee;
-    transform: scale(1.01);
+    background-color: #ddd;
+    transform: scale(1.005);
     transition-property: transform, background-color;
-    transition: 0.7s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
 .record-table-data{
+    color: black;
     padding: 4px;
     border: 1px solid #dddddd;
     text-align: left;
