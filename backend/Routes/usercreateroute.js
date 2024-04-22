@@ -28,6 +28,16 @@ router.post('/add', async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const user = await User.find({});
+    res.json(user);
+  } catch (error) {
+    console.error('Error fetching user role:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 router.post('/login', async (req, res) => {
   const { email, pass } = req.body;
 
