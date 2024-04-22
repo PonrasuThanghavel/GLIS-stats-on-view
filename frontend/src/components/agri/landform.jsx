@@ -145,7 +145,7 @@ const LandForm = ({ onSubmit }) => {
                 />
             </div>
             <div className="landform-group">
-                <label className="landform-label" htmlFor="agriculturalLoan">Agricultural Loan:</label>
+                <label className="landform-label" htmlFor="agriculturalLoan">Agricultural Loan (₹):</label>
                 <input
                     required
                     className='landform-control'

@@ -8,16 +8,17 @@ import { Icon } from "leaflet";
 const Maplinking = () => {
   const [geocode, setGeocode] = useState([]);
   const [zoneTypes, setZoneTypes] = useState([]);
-  const [filteredZone, setFilteredZone] = useState('');
+  const [selectedZone, setSelectedZone] = useState('');
+  const [filteredGeocode, setFilteredGeocode] = useState([]);
 
   useEffect(() => {
     const fetchGeocode = async () => {
       try {
         const response = await axios.get('https://glis-backend.onrender.com/api/bus-stations');
-        setGeocode(response.data);
-        // Extracting unique zone types
-        const types = response.data.map(geo => geo.Zone_type);
-        setZoneTypes([...new Set(types)]);
+        const data = response.data;
+        setGeocode(data);
+        const types = [...new Set(data.map(geo => geo.Zone_type))];
+        setZoneTypes(types);
       } catch (error) {
         console.error('Error fetching geocode:', error);
       }
@@ -26,22 +27,30 @@ const Maplinking = () => {
     fetchGeocode();
   }, []);
 
+  useEffect(() => {
+    if (selectedZone) {
+      const filteredData = geocode.filter(geo => geo.Zone_type === selectedZone);
+      setFilteredGeocode(filteredData);
+    } else {
+      setFilteredGeocode(geocode);
+    }
+  }, [selectedZone, geocode]);
+
   const customIcon = new Icon({
     iconUrl: require('../../assets/images/placeholder.png'),
     iconSize: [38, 38]
   });
 
   const handleFilterChange = (event) => {
-    setFilteredZone(event.target.value);
+    const selectedValue = event.target.value;
+    setSelectedZone(selectedValue);
   };
-
-  const filteredGeocode = filteredZone ? geocode.filter(geo => geo.Zone_type === filteredZone) : geocode;
 
   return (
     <div>
       <div className="filter-container">
         <label className="filter-label" htmlFor="zoneFilter">Filter by Zone Type: </label>
-        <select className="filter-control" id="zoneFilter" onChange={handleFilterChange} value={filteredZone}>
+        <select className="filter-control" id="zoneFilter" onChange={handleFilterChange} value={selectedZone}>
           <option value="">All ({geocode.length})</option>
           {zoneTypes.map((type, index) => (
             <option key={index} value={type}>

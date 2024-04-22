@@ -3,7 +3,7 @@
     padding: 15px;
     border: 3px groove lightslategrey;
     border-radius: 50px;
-    background-color: #dddddd;
+    background-color: lightgray;
     overflow: hidden;
 }
 
@@ -11,13 +11,50 @@
     text-align: center;
 }
 
+.landview-table-header{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
 .land-info {
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    background-color: lightseagreen;
+    border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.landview-table-row{
+    border: 1px solid gray;
+    background-color: #60cfbd;
+    cursor: default;
+}
+
+.landview-table-row:hover{
+    background-color: #eee;
+    transform: scale(1.005);
+    transition-property: transform, background-color;
+    transition: 0.4s ease-in-out;
+}
+
+.landview-table-data {
+    color: black;
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.landview-table-row:nth-child(even) {
+background-color: #247BA0;
+}
+  
+  /* Styling for table rows when hovered */
+  .landview-table-row:hover {
+    background-color: #ddd;
+  }
 
 .table-container {
     display: flex;

@@ -74,9 +74,9 @@ const TableView = () => {
             <th className='tableview-head'>Location Body</th>
             <th className='tableview-head'>Region</th>
             <th className='tableview-head'>Revenue</th>
-            <th className='tableview-head'>Commercial Zone</th>
+            <th className='tableview-head'>Zone Type</th>
             <th className='tableview-head'>Year</th>
-            <th className='tableview-head'>Details</th> {/* Additional column for details */}
+            <th className='tableview-head'>Details</th>
           </tr>
         </thead>
         <tbody>

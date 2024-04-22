@@ -4,6 +4,7 @@ import axios from 'axios';
 import Lottie from 'lottie-react';
 
 const LineChart = () => {
+
   const [chartData, setChartData] = useState({
     loading: true,
     error: null,
@@ -13,11 +14,12 @@ const LineChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://glis-backend.onrender.com/api/bus-stations/graph');
+        const response = await axios.get('https://glis-backend.onrender.com/api/bus-stations');
+
         setChartData({
           loading: false,
           error: null,
-          data: response.data, // Assuming 'data' is the key containing the actual data array
+          data: response.data,
         });
       } catch (error) {
         setChartData({
@@ -33,9 +35,9 @@ const LineChart = () => {
   }, []);
 
   const renderChart = () => {
-    const { data } = chartData;
+    const { data, loading, error } = chartData;
 
-    if (chartData.loading) {
+    if (loading) {
       return (
         <div className="loading-animation">
           <Lottie animationData={require('../../../assets/animations/loading.json')} loop autoplay />
@@ -43,13 +45,14 @@ const LineChart = () => {
       );
     }
 
-    if (chartData.error || !data || data.length === 0) {
-      return <div className="error-message">Error fetching data. Please try again later.</div>;
+    if (error || !data || data.length === 0) {
+      return <div className="error-message">{error || 'Error fetching data. Please try again later.'}</div>;
     }
 
     const seriesData = data.map(station => ({
       x: station.Rev,
-      y: station.Size,}));
+      y: station.Size,
+    }));
 
     const options = {
       chart: {
@@ -72,7 +75,7 @@ const LineChart = () => {
         enabled: true,
         intersect: false,
         custom: function({ series, seriesIndex, dataPointIndex, w }) {
-          const { x, y } = w.globals.series[seriesIndex][dataPointIndex];
+          const { x, y } = w.config.series[seriesIndex].data[dataPointIndex];
           return (
             '<div class="tooltip">' +
             '<span>Revenue: ' + x + '</span>' +

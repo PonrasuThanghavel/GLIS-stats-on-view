@@ -53,59 +53,59 @@ const Landview = () => {
                     <div key={index} className="land-info">
                     <div className="table-container">
                         <div className="left-table">
-                            <h2>Land {index + 1}</h2>
-                            <table>
+                            <h2 className='landview-table-header'>Land {index + 1}</h2>
+                            <table className='landview-table'>
                                 <tbody>
-                                    <tr>
-                                        <td>Owner's Name:</td>
-                                        <td>{land.ownerName}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Owner's Name</td>
+                                        <td className='landview-table-data'>{land.ownerName}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Contact Person:</td>
-                                        <td>{land.contact}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Contact Person</td>
+                                        <td className='landview-table-data'>{land.contact}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Phone Number:</td>
-                                        <td>{land.phoneNumber}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Phone Number</td>
+                                        <td className='landview-table-data'>{land.phoneNumber}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Address:</td>
-                                        <td>{land.address}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Address</td>
+                                        <td className='landview-table-data'>{land.address}</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div className="right-table">
-                            <h3>Land Details</h3>
+                            <h2 className='landview-table-header'>Land Details</h2>
                             <table>
                                 <tbody>
-                                    <tr>
-                                        <td>Land Size:</td>
-                                        <td>{land.landSize}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Land Size</td>
+                                        <td className='landview-table-data'>{land.landSize}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Soil Type:</td>
-                                        <td>{land.soilType}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Soil Type</td>
+                                        <td className='landview-table-data'>{land.soilType}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Crop Cultivated:</td>
-                                        <td>{land.cropCultivated}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Crop Cultivated</td>
+                                        <td className='landview-table-data'>{land.cropCultivated}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Agricultural Loan:</td>
-                                        <td>{land.agriculturalLoan}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Agricultural Loan (₹)</td>
+                                        <td className='landview-table-data'>{land.agriculturalLoan}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Latitude:</td>
-                                        <td>{land.latitude}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Latitude</td>
+                                        <td className='landview-table-data'>{land.latitude}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Longitude:</td>
-                                        <td>{land.longitude}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Longitude</td>
+                                        <td className='landview-table-data'>{land.longitude}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Price of Cultivated Crop:</td>
-                                        <td>{land.cropPrice}</td>
+                                    <tr className='landview-table-row'>
+                                        <td className='landview-table-data'>Price of Cultivated Crop:</td>
+                                        <td className='landview-table-data'>{land.cropPrice}</td>
                                     </tr>
                                 </tbody>
                             </table>

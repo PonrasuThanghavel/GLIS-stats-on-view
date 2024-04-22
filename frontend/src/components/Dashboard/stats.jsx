@@ -71,7 +71,7 @@ const LargeSpace = () => {
                       <tr className='stats-table-row-header'>
                         <th className='stats-table-head'>Name</th>
                         <th className='stats-table-head'>Revenue</th>
-                        <th className='stats-table-head'>Commercial/Park/Industrial</th>
+                        <th className='stats-table-head'>Commercial/Government/Park</th>
                         <th className='stats-table-head'>Total Area</th>
                         <th className='stats-table-head'>Accessibility score</th>
                       </tr>

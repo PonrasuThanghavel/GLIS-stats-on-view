@@ -68,7 +68,7 @@ const Recordview = () => {
                     <td className='record-table-data'>{record.Rev}</td>
                 </tr>
                 <tr className='record-table-row'>
-                    <td className='record-table-data'>Commercial Zone</td>
+                    <td className='record-table-data'>Zone Type</td>
                     <td className='record-table-data'>{record.Zone_type}</td>
                 </tr>
                 <tr className='record-table-row'>
