@@ -95,7 +95,7 @@
 .loader,
 .loader:before,
 .loader:after {
-  background: lightslategrey;
+  background: black;
   animation: load1 1s infinite ease-in-out;
   width: 1em;
   height: 2em;
@@ -104,7 +104,7 @@
 .loader {
   width: 1em;
   height: 2em;
-  color: lightslategrey;
+  color: black;
   text-indent: -9999em;
   margin: 0 auto;
   margin-top: 3px;
