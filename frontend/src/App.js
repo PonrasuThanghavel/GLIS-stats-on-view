@@ -11,6 +11,7 @@
   import Map from './components/Dashboard/maplinking.jsx';
   import Landview from './components/agri/landview.jsx';
   import Landform from './components/agri/landform.jsx'
+  import Market from './components/Market.jsx';
 
   function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,6 +28,7 @@
             <Route path='/login' element={isLoggedIn?<Dashboard/>:<LoginPage isAuthenticated={isLoggedIn} setIsAuthenticated={setIsLoggedIn} />} />
             <Route exact path='/' element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />} />
             <Route path='/data' element={isLoggedIn ? <TableView /> : <Navigate to="/login" />} />
+            <Route path='/Market/:id' element={isLoggedIn ? <Market /> : <Navigate to="/login" />} />
             <Route path='/Map' element={isLoggedIn ? <Map /> : <Navigate to="/login" />} />
             <Route path='/RecordView/:id' element={isLoggedIn ? <Recordview /> : <Navigate to="/login" />} />
             {/* <Route path='/user' element={isLoggedIn ? <User /> : <Navigate to="/login" />} /> */}

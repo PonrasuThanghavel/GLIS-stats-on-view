@@ -78,8 +78,8 @@ const LoginPage = ({ isAuthenticated, setIsAuthenticated }) => {
            </button>
         </div>
 
-
         {error && <div className="loginform-error-msg">{error}</div>}
+        
         <div className="loginform-signup">
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </div>

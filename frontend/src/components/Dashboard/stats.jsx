@@ -119,7 +119,7 @@ const LargeSpace = () => {
                     <tr className='stats-table-row-header'>
                       <th className='stats-table-head'>Name</th>
                       <th className='stats-table-head'>Air Quality Index (AQI)</th>
-                      <th className='stats-table-head'>Bicycle Infrastructure</th>
+                      <th className='stats-table-head'>Market Infrastructure</th>
                       <th className='stats-table-head'>Environmental Features</th>
                       <th className='stats-table-head'>Vegetation Cover</th>
                     </tr>
@@ -127,7 +127,7 @@ const LargeSpace = () => {
                       <tr className='stats-table-row' key={index}>
                         <td className='stats-table-data'>{area.Name}</td>
                         <td className='stats-table-data'>{area.AQI}</td>
-                        <td className='stats-table-data'>{area.BicycleInfrastructure}</td>
+                        <td className='stats-table-data'>{area.MarketInfrastructure}</td>
                         <td className='stats-table-data'>{area.EnvironmentalFeatures}</td>
                         <td className='stats-table-data'>{area.VegetationCover}</td>
                       </tr>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import axios from 'axios';
 import './css/navbar.css';
 import { FaDatabase, FaDoorOpen, FaMap, FaPlusCircle } from 'react-icons/fa';
-import { FaLandmarkFlag } from 'react-icons/fa6';
+import { FaLandmarkFlag, FaShop } from 'react-icons/fa6';
 
 const Navbar = () => {
 
@@ -43,6 +43,9 @@ const Navbar = () => {
         </Link>
         <Link to='/Agri/add' className='navbar-link'>
           <FaPlusCircle className='navbar-icon'/> Add Lands
+        </Link>
+        <Link to='/Market/1' className='navbar-link'>
+          <FaShop className='navbar-icon'/> Market
         </Link>
       </div>
       <a href='/login' tooltip='logout' className='navbar-logout'> <FaDoorOpen className='navbar-logout-icon'/> <span className='tooltip-logout'>logout</span> </a>
