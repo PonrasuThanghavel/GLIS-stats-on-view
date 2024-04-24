@@ -41,7 +41,7 @@ const MarketView = () => {
         Quantity: newCropData.Quantity,
     }
 
-    axios.post(`http://localhost:4000/api/market/${id}/crops`, crop)
+    axios.post(`https://glis-backend.onrender.com/api/market/${id}/crops`, crop)
     .then(res => {
         console.log(res.data);
         setMarketData(res.data);
@@ -53,7 +53,7 @@ const MarketView = () => {
 };
 
   const deleteCrop = (cropId) => {
-    axios.delete(`http://localhost:4000/api/market/${id}/crops/${cropId}`)
+    axios.delete(`https://glis-backend.onrender.com/api/market/${id}/crops/${cropId}`)
       .then(res => {
         console.log(res.data);
         fetchMarketData(id);
