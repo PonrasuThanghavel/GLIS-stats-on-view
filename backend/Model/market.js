@@ -14,6 +14,6 @@ const marketSchema = new mongoose.Schema({
   collection: 'market',timestamps: true,
 });
 
-const MarketModel = mongoose.model('Market', marketSchema);
+const Market = mongoose.model('market', marketSchema);
 
-module.exports = MarketModel;
+module.exports = Market;

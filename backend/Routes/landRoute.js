@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Land = require("../Model/agri");
+const Land = require("../Model/agri.js");
 
 
 

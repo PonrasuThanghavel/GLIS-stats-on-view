@@ -30,7 +30,7 @@ const info = new mongoose.Schema({
   UrbanizationLevel: { type: String, required: true },
   ClimateData: { type: String, required: true },
   lat:{type: Number,require:true},
-  long:{type:Number,required:true},
+  long:{type:Number,required:true}
 },
 {
   collection: 'glis',

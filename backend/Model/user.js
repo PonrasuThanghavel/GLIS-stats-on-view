@@ -13,7 +13,7 @@ const  userSchema = new mongoose.Schema({
   collection: 'user',timestamps: true,
 });
 
-// Create BusStation model
+
 const User= mongoose.model('user', userSchema);
 
-module.exports = User
+module.exports = User;

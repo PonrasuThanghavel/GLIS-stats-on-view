@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Market = require('../Model/market');
+const Market = require('../Model/market.js');
 
 router.get('/', async (req, res) => {
     try {
@@ -27,17 +27,23 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/:id/crops', async (req, res) => {
-  const { id } = req.params;
+router.post('/:id?/crops', async (req, res) => {
+  let { id } = req.params;
+
+  if (!id) {
+    const urlParts = req.url.split('/');
+    id = urlParts[3];
+  }
+
   const { Name, Quantity, Price } = req.body; 
   try {
-    const marketsData = await Market.findOne({ ID: id });
-    if (!marketsData) {
+    const marketData = await Market.findOne({ ID: id });
+    if (!marketData) {
       return res.status(404).json({ message: 'Market data not found for this ID.' });
     }
-    marketsData.Crops.push({ Name, Quantity, Price }); 
-    await marketsData.save();
-    res.status(201).json(marketsData);
+    marketData.Crops.push({ Name, Quantity, Price }); 
+    await marketData.save();
+    res.status(201).json(marketData);
   } catch (error) {
     console.error('Error adding crop:', error);
     res.status(500).json({ message: 'Error adding crop to the database.' });
