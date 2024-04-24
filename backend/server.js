@@ -9,7 +9,7 @@ const floodRiskRoutes = require('./Routes/floodriskRoutes.js');
 const enviSafetyRoutes = require('./Routes/enviRoutes.js');
 const usercreate=require('./Routes/usercreateroute.js');
 const Land =require('./Routes/landRoute.js');
-
+const Market = require('./Routes/marketRoutes.js');
 
 const app = express();
 const port = 4000;
@@ -39,6 +39,7 @@ app.use('/api/flood-risk', floodRiskRoutes);
 app.use('/api/envi-safety', enviSafetyRoutes);
 app.use('/api/user',usercreate);
 app.use('/api/agri',Land);
+app.use('/api/market',Market);
 
 // Start the server
 app.listen(port, () => {

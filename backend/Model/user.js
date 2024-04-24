@@ -8,7 +8,6 @@ const  userSchema = new mongoose.Schema({
     Usr_address:{type:"string",required:"true",  unique: "true"},
     Usr_pass:{type:"string",required:"true",  unique: "true"},
     role:{type:"string",required:"true" },
-
 },
 {
   collection: 'user',timestamps: true,

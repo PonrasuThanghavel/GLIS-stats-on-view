@@ -17,7 +17,7 @@ const info = new mongoose.Schema({
   CrimeRate: { type: String, required: true },
   DemographicData: { type: String, required: true },
   TODScore: { type: Number, required: true },
-  BicycleInfrastructure: { type: String, required: true },
+  MarketInfrastructure: { type: String, required: true },
   EnvironmentalFeatures: { type: String, required: true },
   FloodRiskScore: { type: Number, required: true },
   FloodZone: { type: String, required: true },
