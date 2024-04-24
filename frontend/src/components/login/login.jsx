@@ -24,7 +24,7 @@ const LoginPage = ({ isAuthenticated, setIsAuthenticated }) => {
         throw new Error('Login failed');
       }
 
-      setIsAuthenticated(true); // Update isAuthenticated state in App.js
+      setIsAuthenticated(true); 
     } catch (error) {
       setError('Invalid email or password');
     } finally {
