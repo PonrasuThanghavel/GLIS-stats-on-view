@@ -1,43 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-// import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 import './css/Market.css';
 
 const Market = () => {
-  const { id } = useParams();
-  const [marketData, setMarketData] = useState(null);
+  const [marketPlaces, setMarketPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchMarketData(id);
-  }, [id]);
+    fetchMarketPlaces();
+  }, []);
 
-  const fetchMarketData = async (id) => {
+  const fetchMarketPlaces = async () => {
     try {
-      // For testing purposes, let's use the provided JSON data directly
-      const testData = {
-        "ID": 1,
-        "crops": [
-          {
-            "name": "Onion",
-            "quantity": 20
-          },
-          {
-            "name": "Tomato",
-            "quantity": 80
-          },
-          {
-            "name": "Cabbage",
-            "quantity": 100
-          }
-        ]
-      };
-      setMarketData(testData);
+      const response = await axios.get('http://localhost:4000/api/bus-stations');
+      const placesWithMarket = response.data;
+      const filteredPlaces = placesWithMarket.filter(place => place.MarketInfrastructure);
+      console.log(filteredPlaces);
+      setMarketPlaces(placesWithMarket);
       setLoading(false);
     } catch (error) {
-      console.error(error);
-      setError('Error fetching market data. Please try again later.');
+      console.error('Error fetching market places:', error);
+      setError('Error fetching market places. Please try again later.');
       setLoading(false);
     }
   };
@@ -50,15 +36,17 @@ const Market = () => {
         <div>Error: {error}</div>
       ) : (
         <div>
-          <h2>Market Information for ID: {marketData.ID}</h2>
-          <div className='market-details'>
-            <h3>Crops Information</h3>
-            <ul>
-              {marketData.crops.map((crop, index) => (
-                <li key={index}>{crop.name}: {crop.quantity}</li>
-              ))}
-            </ul>
-          </div>
+          <h2>Places with Market Infrastructure</h2>
+          <ul className='market-list'>
+            {marketPlaces.map(place => (
+              <li key={place.ID}>
+                <Link to={`/MarketView/${place.ID}`} className='place-link'>
+                  {place.Name}
+                  <FaArrowRight className='arrow-icon' />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

@@ -44,7 +44,7 @@ const Navbar = () => {
         <Link to='/Agri/add' className='navbar-link'>
           <FaPlusCircle className='navbar-icon'/> Add Lands
         </Link>
-        <Link to='/Market/1' className='navbar-link'>
+        <Link to='/Market' className='navbar-link'>
           <FaShop className='navbar-icon'/> Market
         </Link>
       </div>
