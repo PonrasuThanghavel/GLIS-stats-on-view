@@ -104,15 +104,19 @@ const Recordview = () => {
                     <td className='record-table-data'>{record.SoilType}</td>
                 </tr>
                 <tr className='record-table-row'>
-                    <td className='record-table-data'>VegetationCover</td>
+                    <td className='record-table-data'>Vegetation Cover</td>
                     <td className='record-table-data'>{record.VegetationCover}</td>
+                </tr>
+                <tr className='record-table-row'>
+                    <td className='record-table-data'>Market Infrastructure</td>
+                    <td className='record-table-data'>{record.MarketInfrastructure ? 'Yes' : 'No'}</td>
                 </tr>
                 <tr className='record-table-row'>
                     <td className='record-table-data'>UrbanizationLevel</td>
                     <td className='record-table-data'>{record.UrbanizationLevel}</td>
                 </tr>
                 <tr className='record-table-row'>
-                    <td className='record-table-data'>ClimateData</td>
+                    <td className='record-table-data'>Climate Data</td>
                     <td className='record-table-data'>{record.ClimateData}</td>
                 </tr>
             </tbody>

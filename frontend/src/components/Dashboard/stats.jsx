@@ -127,7 +127,7 @@ const LargeSpace = () => {
                       <tr className='stats-table-row' key={index}>
                         <td className='stats-table-data'>{area.Name}</td>
                         <td className='stats-table-data'>{area.AQI}</td>
-                        <td className='stats-table-data'>{area.MarketInfrastructure}</td>
+                        <td className='stats-table-data'>{area.MarketInfrastructure ? 'Yes' : 'No'}</td>
                         <td className='stats-table-data'>{area.EnvironmentalFeatures}</td>
                         <td className='stats-table-data'>{area.VegetationCover}</td>
                       </tr>
