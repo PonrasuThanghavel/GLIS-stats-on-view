@@ -25,7 +25,7 @@ const MarketView = () => {
 
   const fetchMarketData = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/market/${id}`);
+      const response = await axios.get(`https://glis-backend.onrender.com/api/market/${id}`);
       setMarketData(response.data);
     } catch (error) {
       console.error('Error fetching market data:', error);
