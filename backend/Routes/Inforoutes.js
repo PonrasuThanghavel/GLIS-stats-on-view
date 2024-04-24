@@ -22,7 +22,8 @@ router.get('/:id', async (req, res) => {
       return res.status(404).json({ error: 'Bus station not found' });
     }
     return res.json(busStation);
-  } catch (error) {
+  } 
+  catch (error) {
     console.error('Error fetching bus station by ID:', error);
     return res.status(500).json({ error: 'Internal Server Error' });
   }
