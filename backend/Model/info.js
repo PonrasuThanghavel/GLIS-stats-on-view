@@ -31,13 +31,6 @@ const info = new mongoose.Schema({
   ClimateData: { type: String, required: true },
   lat:{type: Number,require:true},
   long:{type:Number,required:true},
-  Crops: [
-    {
-      Name: { type: String, required: true },
-      Price: {type: Number, required: true},
-      Quantity: { type: Number, required: true }
-    }
-  ]
 },
 {
   collection: 'glis',
