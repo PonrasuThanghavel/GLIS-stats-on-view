@@ -9,6 +9,9 @@ const marketSchema = new mongoose.Schema({
       Quantity: { type: Number, required: true }
     }
   ]
+},
+{
+  collection: 'market',timestamps: true,
 });
 
 const MarketModel = mongoose.model('Market', marketSchema);
