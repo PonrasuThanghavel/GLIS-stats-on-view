@@ -37,14 +37,19 @@ const TableView = () => {
   const sortedBusStations = filteredBusStations.sort((a, b) => {
     if (sortType === 'ID') {
       return a.ID - b.ID;
-    } else if (sortType === 'Name') {
+    } 
+    else if (sortType === 'Name') {
       return a.Name.localeCompare(b.Name);
-    } else if (sortType === 'Reg') {
+    } 
+    else if (sortType === 'Reg') {
       return a.Reg.localeCompare(b.Reg);
-    } else if (sortType === 'Year') {
+    } 
+    else if (sortType === 'Year') {
       return a.Year - b.Year;
     } 
-    return 0;
+    else if (sortType === 'Zone_type') {
+      return a.Zone_type.localeCompare(b.Zone_type);
+    }
   });
 
   return (
@@ -63,6 +68,7 @@ const TableView = () => {
           <option value="Name">Name</option>
           <option value="Reg">Region</option>
           <option value="Year">Year</option>
+          <option value="Zone_type">Zones</option>
         </select>
       </div>
   
@@ -76,7 +82,7 @@ const TableView = () => {
             <th className='tableview-head'>Revenue</th>
             <th className='tableview-head'>Zone Type</th>
             <th className='tableview-head'>Year</th>
-            <th className='tableview-head'>Details</th>
+            <th className='tableview-head'>More Details</th>
           </tr>
         </thead>
         <tbody>
