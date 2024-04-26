@@ -83,7 +83,7 @@ const Maplinking = () => {
       </div>
       <MapContainer center={[13.0505, 80.2241]} zoom={12}>
         <TileLayer
-          attribution="mywork"
+          attribution="glis"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
