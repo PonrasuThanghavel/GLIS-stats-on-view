@@ -50,6 +50,7 @@ const TableView = () => {
     else if (sortType === 'Zone_type') {
       return a.Zone_type.localeCompare(b.Zone_type);
     }
+    return 0;
   });
 
   return (
