@@ -70,4 +70,28 @@ router.delete('/:id/crops/:cropId', async (req, res) => {
   }
 });
 
+// Update the quantity of a crop
+router.put('/:id/crops/:cropId', async (req, res) => {
+  const { id, cropId } = req.params;
+  const { Quantity } = req.body; // New quantity
+
+  try {
+    const marketData = await Market.findOne({ ID: id });
+    if (!marketData) {
+      return res.status(404).json({ message: 'Market data not found for this ID.' });
+    }
+    const crop = marketData.Crops.id(cropId);
+    if (!crop) {
+      return res.status(404).json({ message: 'Crop not found in market data.' });
+    }
+    crop.Quantity = Quantity; // Update quantity
+    await marketData.save();
+    res.json({ message: 'Crop quantity updated successfully.' });
+  } catch (error) {
+    console.error('Error updating crop quantity:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
 module.exports = router;
