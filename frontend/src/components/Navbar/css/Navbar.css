@@ -61,7 +61,7 @@
 .tooltip-logout {
   visibility: hidden; 
   width: 40px;
-  font-size: 12px;
+  font-size: 14px; 
   background-color: white;
   color: black;
   text-align: center;
@@ -69,15 +69,13 @@
   padding: 5px;
   position: absolute;
   z-index: 1;
-  top: calc(100% + 5px); 
-  left: 50%; 
-  transform: translateX(-50%);
+  top: calc(50% - 10px);
+  right: calc(100% + 5px); 
   opacity: 0;
-  transition: opacity 0.3s; 
+  transition: opacity 0.4s; 
 }
 
 .navbar-logout:hover .tooltip-logout {
   visibility: visible; 
   opacity: 1;
 }
-

@@ -18,6 +18,7 @@ const Recordview = () => {
   const fetchRecord = async (id) => {
     try {
       const response = await axios.get(`https://glis-stats-on-view.onrender.com/api/bus-stations/${id}`);
+      console.log(response.data)
       setRecord(response.data);
     } catch (error) {
       console.error(error);
@@ -108,8 +109,8 @@ const Recordview = () => {
                     <td className='record-table-data'>{record.VegetationCover}</td>
                 </tr>
                 <tr className='record-table-row'>
-                    <td className='record-table-data'>Market Infrastructure</td>
-                    <td className='record-table-data'>{record.MarketInfrastructure ? 'Yes' : 'No'}</td>
+                  <td className='record-table-data'>Market Infrastructure</td>
+                  <td className='record-table-data'>{record.MarketInfrastructure === 'true' ? 'Yes' : 'No'}</td>
                 </tr>
                 <tr className='record-table-row'>
                     <td className='record-table-data'>UrbanizationLevel</td>

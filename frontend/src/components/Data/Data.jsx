@@ -30,9 +30,11 @@ const TableView = () => {
     setSortType(event.target.value);
   };
 
-  const filteredBusStations = busStations.filter((station) =>
-    station.Name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredBusStations = busStations.filter( station => (
+    station.Name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    station.Reg.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    station.Zone_type.toLowerCase().includes(searchTerm.toLowerCase())
+  ));
 
   const sortedBusStations = filteredBusStations.sort((a, b) => {
     if (sortType === 'ID') {
@@ -59,7 +61,7 @@ const TableView = () => {
 
         <input
           className='search-bar'
-          placeholder="Search By Name..."
+          placeholder="🔍 Search By Name, Region, Zone Type"
           value={searchTerm}
           onChange={handleSearch}
         />

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { FaPlusCircle } from 'react-icons/fa';
+import Crop from './Crop';
 import './css/MarketView.css';
 
 const MarketView = () => {
@@ -8,6 +10,7 @@ const MarketView = () => {
   const [busStation, setBusStation] = useState({});
   const [marketData, setMarketData] = useState(null);
   const [newCropData, setNewCropData] = useState({ Name: '', Price: '', Quantity: '' });
+  const [cropQuantities, setCropQuantities] = useState({}); 
 
   useEffect(() => {
     fetchBusStation(id);
@@ -27,31 +30,83 @@ const MarketView = () => {
     try {
       const response = await axios.get(`https://glis-stats-on-view.onrender.com/api/market/${id}`);
       setMarketData(response.data);
+      // Initialize crop quantities state with default values from market data
+      if (response.data && response.data.Crops) {
+        const quantities = {};
+        response.data.Crops.forEach(crop => {
+          quantities[crop._id] = crop.Quantity;
+        });
+        setCropQuantities(quantities);
+      }
     } catch (error) {
       console.error('Error fetching market data:', error);
     }
   };
 
+  const updateCropQuantity = async (cropId, newQuantity) => {
+    try {
+      await axios.put(`https://glis-stats-on-view.onrender.com/api/market/${id}/crops/${cropId}`, { Quantity: newQuantity });
+      fetchMarketData(id);
+    } catch (error) {
+      console.error('Error updating crop quantity:', error);
+    }
+  };
+  
+  const incrementQuantity = (cropId) => {
+    const updatedQuantity = parseInt(cropQuantities[cropId]) + 1;
+    setCropQuantities(prevState => ({
+      ...prevState,
+      [cropId]: updatedQuantity
+    }));
+    updateCropQuantity(cropId, updatedQuantity);
+  };
+
+  const decrementQuantity = (cropId) => {
+    if (parseInt(cropQuantities[cropId]) > 0) {
+      const updatedQuantity = parseInt(cropQuantities[cropId]) - 1;
+      setCropQuantities(prevState => ({
+        ...prevState,
+        [cropId]: updatedQuantity
+      }));
+      updateCropQuantity(cropId, updatedQuantity);
+    }
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
-
+  
     const crop = {
-        Name: newCropData.Name,
-        Price: newCropData.Price,
-        Quantity: newCropData.Quantity,
-    }
-
+      Name: newCropData.Name,
+      Price: newCropData.Price,
+      Quantity: parseInt(newCropData.Quantity)
+    };
+  
     axios.post(`https://glis-stats-on-view.onrender.com/api/market/${id}/crops`, crop)
-    .then(res => {
-        console.log(res.data);
+      .then(res => {
+        const newCropId = res.data.Crops.find(c => c.Name === newCropData.Name)._id; // Find the ID of the newly added crop
         setMarketData(res.data);
+        setCropQuantities(prevState => ({
+          ...prevState,
+          [newCropId]: parseInt(newCropData.Quantity)
+        }));
         setNewCropData({ Name: '', Price: '', Quantity: '' });
-    })
-    .catch(error => {
+      })
+      .catch(error => {
         console.error('Error Creating Crop:', error);
-    });
-};
-
+      });
+  };
+  
+  
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewCropData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+  
+  
   const deleteCrop = (cropId) => {
     axios.delete(`https://glis-stats-on-view.onrender.com/api/market/${id}/crops/${cropId}`)
       .then(res => {
@@ -63,40 +118,39 @@ const MarketView = () => {
       });
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    console.log(value);
-    setNewCropData({ ...newCropData, [name]: value });
-  };
-
   return (
     <div className='MarketView'>
-        <div>
-          <h2>Market Information for ID: {busStation.ID}</h2>
-          <h3>Market Name: {busStation.Name}</h3>
-          <div className='crops-info'>
-            <h3>Crops Information</h3>
-            <ul>
-              {marketData && marketData.Crops && marketData.Crops.length > 0 ? (
-                marketData.Crops.map((crop, index) => (
-                  <div key={index}>
-                    <li>{crop.Name}: {crop.Quantity} Price: {crop.Price}</li>
-                    <button onClick={() => deleteCrop(crop._id)}>Delete</button>
-                  </div>
-                ))
-              ) : (
-                <div>No crops available for this market.</div>
-              )}
-            </ul>
-            <h3>Add New Crop:</h3>
-            <form onSubmit={onSubmit}>
-                <input name="Name" value={newCropData.Name} onChange={handleChange} placeholder="Crop Name" />
-                <input  name="Quantity" value={newCropData.Quantity} onChange={handleChange} placeholder="Quantity" />
-                <input name="Price" value={newCropData.Price} onChange={handleChange} placeholder="Price" />
-                <button onSubmit={onSubmit}>Add Crop</button>
-            </form>
-          </div>
-        </div>
+      <div className='Market-header-container'>
+        <h2 className='Market-header'>Market Information for ID: {busStation.ID}</h2>
+        <h2 className='Market-header'>Market Name: {busStation.Name}</h2>
+      </div>
+      <div className='Crop-Add-form'>
+        <h3 className='Crop-Add'>Add New Crop:</h3>
+        <form onSubmit={onSubmit}>
+          <input className='Crop-Add-input' name="Name" value={newCropData.Name} onChange={handleChange} placeholder="Crop Name" />
+          <input className='Crop-Add-input' name="Quantity" value={newCropData.Quantity} onChange={handleChange} placeholder="Quantity" />
+          <input className='Crop-Add-input' name="Price" value={newCropData.Price} onChange={handleChange} placeholder="Price" />
+          <button className='Crop-Add-btn' type="submit"> <FaPlusCircle /> </button>
+        </form>
+      </div>
+     
+      <h3 className='Crops-info-header'>Crops Information</h3>
+      <div className='Crops-container'>
+        {marketData && marketData.Crops && marketData.Crops.length > 0 ? (
+          marketData.Crops.map((crop, index) => (
+            <Crop
+              key={index}
+              crop={crop}
+              quantity={cropQuantities[crop._id]}
+              incrementQuantity={() => incrementQuantity(crop._id)}
+              decrementQuantity={() => decrementQuantity(crop._id)}
+              deleteCrop={() => deleteCrop(crop._id)}
+            />
+          ))
+        ) : (
+          <div>No crops available for this market.</div>
+        )}
+      </div>
     </div>
   );
 };
