@@ -117,3 +117,15 @@
 .Crop-quantity-btn:hover::after {
   opacity: 1;
 }
+
+.Crop-box.low {
+  background-color: #FF6347; 
+}
+
+.Crop-box.normal {
+  background-color: #247BA0; 
+}
+
+.Crop-box.high {
+  background-color: #28a745; 
+}
