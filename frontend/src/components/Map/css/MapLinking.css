@@ -10,9 +10,9 @@
 
 .filter-control{
   font-size: 16px;
-  padding: 2px;
-  border: 2px outset #70C1B3;
-  border-radius: 20px;
+  padding: 5px;
+  border: 3px outset lightseagreen;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -24,9 +24,9 @@
 .leaflet-container{
   height: 600px;
   width: 1000px;
-  border: 1px solid #000;
+  border: 3px outset #247BA0;
   border-radius: 8px;
-  margin: 20px 0px 0px 300px;
+  margin: 10px 0px 0px 300px;
 }
 
 .legend-container {

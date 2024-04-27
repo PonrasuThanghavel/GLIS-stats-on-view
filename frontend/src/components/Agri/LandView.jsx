@@ -53,7 +53,7 @@ const Landview = () => {
                     <div key={index} className="land-info">
                     <div className="table-container">
                         <div className="left-table">
-                            <h2 className='landview-table-header'>Land {index + 1}</h2>
+                            <h2 className='landview-table-header'>Land {index + 1} Owner Details</h2>
                             <table className='landview-table'>
                                 <tbody>
                                     <tr className='landview-table-row'>
@@ -77,7 +77,7 @@ const Landview = () => {
                         </div>
                         <div className="right-table">
                             <h2 className='landview-table-header'>Land Details</h2>
-                            <table>
+                            <table  className='landview-table'>
                                 <tbody>
                                     <tr className='landview-table-row'>
                                         <td className='landview-table-data'>Land Size</td>

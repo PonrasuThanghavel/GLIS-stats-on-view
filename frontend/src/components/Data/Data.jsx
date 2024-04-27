@@ -46,12 +46,15 @@ const TableView = () => {
     else if (sortType === 'Reg') {
       return a.Reg.localeCompare(b.Reg);
     } 
+    else if (sortType === 'Revenue') {
+      return a.Rev - b.Rev;
+    } 
     else if (sortType === 'Year') {
       return a.Year - b.Year;
-    } 
+    }
     else if (sortType === 'Zone_type') {
       return a.Zone_type.localeCompare(b.Zone_type);
-    }
+    } 
     return 0;
   });
 
@@ -70,9 +73,11 @@ const TableView = () => {
           <option value="ID">ID</option>
           <option value="Name">Name</option>
           <option value="Reg">Region</option>
+          <option value="Revenue">Revenue</option>
           <option value="Year">Year</option>
           <option value="Zone_type">Zones</option>
         </select>
+
       </div>
   
       <table className='tableview-container'>
@@ -101,7 +106,7 @@ const TableView = () => {
               {/* <Recordview id={station.ID} /> */}
               <td className='tableview-row-data'>
                 {/* Pass ID to Recordview component */}
-                <Link className='table-link' to={`/RecordView/${station.ID}`}><FaArrowRight/></Link>
+                <Link className='table-link' to={`/RecordView/${station.ID}`}><FaArrowRight className='table-arrow-icon'/></Link>
               </td>
             </tr>
            

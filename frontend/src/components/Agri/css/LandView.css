@@ -11,24 +11,29 @@
     text-align: center;
 }
 
-.landview-table-header{
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    color: white;
-}
-
 .land-info {
     background-color: lightseagreen;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.land-info .landview-table-header{
+    color: black;
+    background-color: #247BA0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.landview-table{
+    border-collapse: collapse;
+}
+
 .landview-table-row{
-    border: 1px solid gray;
-    background-color: #60cfbd;
+    background-color: #247BA0;
     cursor: default;
 }
 
@@ -40,15 +45,16 @@
 }
 
 .landview-table-data {
-    color: black;
-    border: 1px solid gray;
-    padding: 10px;
-    text-align: center;
-    text-transform: capitalize;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 .landview-table-row:nth-child(even) {
-background-color: #247BA0;
+    background-color: #60cfbd;
 }
   
   /* Styling for table rows when hovered */
@@ -67,29 +73,6 @@ background-color: #247BA0;
 
 .left-table table, .right-table table {
     width: 100%;
-}
-
-.land-info h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.land-info h3 {
-    color: #555;
-    margin-top: 20px;
-}
-
-.land-info table {
-    border-collapse: collapse;
-}
-
-.land-info td {
-    padding: 8px 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-.land-info td:first-child {
-    font-weight: bold;
 }
 
 .landview-trash-btn {

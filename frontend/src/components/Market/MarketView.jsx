@@ -75,6 +75,13 @@ const MarketView = () => {
   const onSubmit = (e) => {
     e.preventDefault();
   
+    const isCropExists = marketData.Crops.some(crop => crop.Name.toLocaleLowerCase() === newCropData.Name.toLocaleLowerCase());
+  
+    if (isCropExists) {
+      alert('Crop with this name already exists!');
+      return;
+    }
+  
     const crop = {
       Name: newCropData.Name,
       Price: newCropData.Price,
@@ -97,7 +104,6 @@ const MarketView = () => {
   };
   
   
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewCropData(prevState => ({
@@ -105,7 +111,6 @@ const MarketView = () => {
       [name]: value
     }));
   };
-  
   
   const deleteCrop = (cropId) => {
     axios.delete(`https://glis-stats-on-view.onrender.com/api/market/${id}/crops/${cropId}`)
