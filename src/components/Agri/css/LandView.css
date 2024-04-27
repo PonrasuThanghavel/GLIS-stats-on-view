@@ -1,0 +1,101 @@
+.LandView{
+    margin: 15px;
+    padding: 15px;
+    border: 3px groove lightslategrey;
+    border-radius: 50px;
+    background-color: lightgray;
+    overflow: hidden;
+}
+
+.landview-header{
+    text-align: center;
+}
+
+.land-info {
+    background-color: lightseagreen;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.land-info .landview-table-header{
+    color: black;
+    background-color: #247BA0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.landview-table{
+    border-collapse: collapse;
+}
+
+.landview-table-row{
+    background-color: #247BA0;
+    cursor: default;
+}
+
+.landview-table-row:hover{
+    background-color: #eee;
+    transform: scale(1.005);
+    transition-property: transform, background-color;
+    transition: 0.4s ease-in-out;
+}
+
+.landview-table-data {
+  color: black;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.landview-table-row:nth-child(even) {
+    background-color: #60cfbd;
+}
+  
+  /* Styling for table rows when hovered */
+  .landview-table-row:hover {
+    background-color: #ddd;
+  }
+
+.table-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-table, .right-table {
+    width: calc(50% - 10px);
+}
+
+.left-table table, .right-table table {
+    width: 100%;
+}
+
+.landview-trash-btn {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.landview-trash-btn button {
+    margin: auto;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: default;
+    transition: background-color 0.3s;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.landview-trash-btn button:hover {
+    background-color: #e74c3c;
+}
+ 
+
