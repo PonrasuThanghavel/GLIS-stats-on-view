@@ -81,7 +81,7 @@ const LoginPage = ({ isAuthenticated, setIsAuthenticated }) => {
         {error && <div className="loginform-error-msg">{error}</div>}
         
         <div className="loginform-signup">
-          Don't have an account? <Link to="/signup">Sign Up</Link>
+          Don't have an account? <Link className="loginform-signup-btn" to="/signup">Sign Up</Link>
         </div>
 
       </form>

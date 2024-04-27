@@ -37,10 +37,8 @@ const SignUp = () => {
 
     try {
       const response = await axios.post('https://glis-stats-on-view.onrender.com/api/user/add', formData);
-
       console.log('Response from server:', response.data);
       navigate('/login'); 
-
     } catch (error) {
       setError('Failed to sign up');
       console.error('Error signing up:', error);
@@ -133,13 +131,12 @@ const SignUp = () => {
           <option value="">Select</option>
           <option value="farmer">Farmer</option>
           <option value="governmentOfficial">Government Official</option>
-          <option value="marketOwner">Market Owner</option>
         </select>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </div>
 
       <div className='signupform-submit-container'>
-        <button className='signupform-submit-btn' type='submit'>Sign Up</button>
+        <button className='signupform-submit-btn' type='submit'>Submit</button>
       </div>
     </form>
   );

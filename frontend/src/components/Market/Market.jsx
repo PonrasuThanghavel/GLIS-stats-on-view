@@ -60,7 +60,6 @@ const Market = () => {
         <div>Error: {error}</div>
       ) : (
         <div>
-          <h2 className='Market-header'>Places with Market Infrastructure</h2>
           <div className='Search-Bar'>
               <input 
                 type="text" 
