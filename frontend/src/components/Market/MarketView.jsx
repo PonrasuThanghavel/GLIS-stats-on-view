@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { FaPlusCircle } from 'react-icons/fa';
+import { FaArrowRight, FaPlusCircle } from 'react-icons/fa';
 import Crop from './Crop';
 import './css/MarketView.css';
 
@@ -11,6 +11,12 @@ const MarketView = () => {
   const [marketData, setMarketData] = useState(null);
   const [newCropData, setNewCropData] = useState({ Name: '', Price: '', Quantity: '' });
   const [cropQuantities, setCropQuantities] = useState({}); 
+  const [showRefillForm, setShowRefillForm] = useState(false);
+
+  useEffect(() => {
+    const isRefillRequired = Object.values(cropQuantities).some(quantity => quantity <= 50);
+    setShowRefillForm(isRefillRequired);
+  }, [cropQuantities]);
 
   useEffect(() => {
     fetchBusStation(id);
@@ -30,7 +36,6 @@ const MarketView = () => {
     try {
       const response = await axios.get(`https://glis-stats-on-view.onrender.com/api/market/${id}`);
       setMarketData(response.data);
-      // Initialize crop quantities state with default values from market data
       if (response.data && response.data.Crops) {
         const quantities = {};
         response.data.Crops.forEach(crop => {
@@ -103,7 +108,6 @@ const MarketView = () => {
       });
   };
   
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewCropData(prevState => ({
@@ -128,7 +132,15 @@ const MarketView = () => {
       <div className='Market-header-container'>
         <h2 className='Market-header'>Market Information for ID: {busStation.ID}</h2>
         <h2 className='Market-header'>Market Name: {busStation.Name}</h2>
-      </div>
+        </div>
+        {showRefillForm && (
+        <div>
+          <form className='warning-form' action="https://formsubmit.co/narainkarthik812@gmail.com" method="POST">
+            <input name="warning" onChange={handleChange} placeholder='Type the Message to be sent' className='Warning-Form-input' required />
+            <button type="submit" className='Warning-Form-btn'> <FaArrowRight className='warning-arrow-icon' /> </button>
+          </form>
+        </div>
+        )}
       <div className='Crop-Add-form'>
         <h3 className='Crop-Add'>Add New Crop:</h3>
         <form onSubmit={onSubmit}>
