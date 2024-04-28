@@ -14,7 +14,7 @@ const MarketView = () => {
   const [showRefillForm, setShowRefillForm] = useState(false);
 
   useEffect(() => {
-    const isRefillRequired = Object.values(cropQuantities).some(quantity => quantity <= 50);
+    const isRefillRequired = Object.values(cropQuantities).some(quantity => quantity <= 25);
     setShowRefillForm(isRefillRequired);
   }, [cropQuantities]);
 
@@ -126,27 +126,29 @@ const MarketView = () => {
         console.error('Error deleting Crop:', error);
       });
   };
+  const date = new Date();
 
   return (
     <div className='MarketView'>
-      <div className='Market-header-container'>
-        <h2 className='Market-header'>Market Information for ID: {busStation.ID}</h2>
-        <h2 className='Market-header'>Market Name: {busStation.Name}</h2>
+        <div className='Market-header-container'>
+          <h2 className='Market-header'>Market Information for ID: {busStation.ID}</h2>
+          <h2 className='Market-header'>Market Name: {busStation.Name}</h2>
+          <h2 className='Market-header-Date'>Date: {date.getDate()} / {date.getMonth()} / {date.getFullYear()}</h2>
         </div>
         {showRefillForm && (
         <div>
           <form className='warning-form' action="https://formsubmit.co/narainkarthik812@gmail.com" method="POST">
-            <input name="warning" onChange={handleChange} placeholder='Type the Message to be sent' className='Warning-Form-input' required />
-            <button type="submit" className='Warning-Form-btn'> <FaArrowRight className='warning-arrow-icon' /> </button>
+            <input id="warning" name="warning" onChange={handleChange} placeholder='Type the Message to be sent' className='Warning-Form-input' autoComplete='true' required />
+            <button type="submit" className='Warning-Form-btn'><FaArrowRight /></button>
           </form>
         </div>
         )}
       <div className='Crop-Add-form'>
         <h3 className='Crop-Add'>Add New Crop:</h3>
         <form onSubmit={onSubmit}>
-          <input className='Crop-Add-input' name="Name" value={newCropData.Name} onChange={handleChange} placeholder="Crop Name" />
-          <input className='Crop-Add-input' name="Quantity" value={newCropData.Quantity} onChange={handleChange} placeholder="Quantity" />
-          <input className='Crop-Add-input' name="Price" value={newCropData.Price} onChange={handleChange} placeholder="Price" />
+          <input id="Name" className='Crop-Add-input' name="Name" value={newCropData.Name} onChange={handleChange} placeholder="Crop Name" autoComplete='true' />
+          <input id="Quantity" className='Crop-Add-input' name="Quantity" value={newCropData.Quantity} onChange={handleChange} placeholder="Quantity" autoComplete='true' />
+          <input id="Price" className='Crop-Add-input' name="Price" value={newCropData.Price} onChange={handleChange} placeholder="Price" autoComplete='true' />
           <button className='Crop-Add-btn' type="submit"> <FaPlusCircle /> </button>
         </form>
       </div>

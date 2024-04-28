@@ -39,14 +39,20 @@
   }
   
   .landform-control{
-    border: 3px outset lightskyblue;
+    border: 3px outset lightseagreen;
     font-size: 16px;
     width: 50%;
     margin-right: 10%;
     height: 25px;
     outline: none;
     border-radius: 10px;
+    transition: border-color 0.4s ease-in-out;
     text-align: center;
+  }
+
+  .landform-control:focus{
+    border: 3px outset #007bff;
+    outline: none;
   }
   
   .landform-control::placeholder{

@@ -38,15 +38,15 @@
 }
 
 .Market-list-box {
-  position: relative; /* Set position to relative */
+  position: relative; 
   margin: 10px;
-  width: calc(30% - 20px); /* Adjusted width for better spacing */
-  padding: 20px; /* Increased padding for better readability */
+  width: calc(30% - 20px); 
+  padding: 20px; 
   border-radius: 10px;
   background-color: #247BA0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease;
-  overflow: hidden; /* Hide overflowing content */
+  overflow: hidden; 
 }
 
 .Market-list-box:hover {

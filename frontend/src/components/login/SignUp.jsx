@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './css/SignUp.css'; 
@@ -138,6 +139,10 @@ const SignUp = () => {
       <div className='signupform-submit-container'>
         <button className='signupform-submit-btn' type='submit'>Submit</button>
       </div>
+
+      <div className="loginform-signup">
+          Already have an account? <Link className="loginform-signup-btn" to="/login">Login</Link>
+        </div>
     </form>
   );
 };

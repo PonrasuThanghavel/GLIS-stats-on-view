@@ -1,6 +1,3 @@
-/* largespace.css */
-
-/* General styles */
 .stats-slide {
   width: 600px;
   height: fit-content;
@@ -19,7 +16,6 @@
   font-size: 16px;
 }
 
-/* Table styles for different sections */
 .stats-table-env {
   margin-left: 25px;
   height: 300px;
@@ -44,42 +40,38 @@
   background-color: lightskyblue;
 }
 
-/* Table header styles */
 .stats-table-head {
   border: 1px solid black;
   font-weight: bold;
   text-align: center;
-  padding: 2px; /* Increased padding for better visibility */
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  padding: 2px; 
+  transition: background-color 0.3s ease; 
 }
 
-/* Table body styles */
 .stats-table-body {
   border: 1px solid lightslategrey;
 }
 
 .stats-table-row-header {
-  padding: 8px; /* Increased padding for better visibility */
+  padding: 8px; 
 }
 
 .stats-table-row {
-  padding: 2px; /* Increased padding for better visibility */
+  padding: 2px; 
   text-align: center;
   border: 1px solid lightgray;
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  transition: background-color 0.3s ease; 
 }
 
-/* Table data styles */
 .stats-table-data {
-  padding: 2px; /* Increased padding for better visibility */
+  padding: 2px; 
   font: inherit;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 600;
   text-align: center;
   border: 1px solid lightslategray;
 }
 
-/* Loading animation styles */
 .loading-animation {
   display: flex;
   justify-content: center;
@@ -87,8 +79,6 @@
   height: 300px;
 }
 
-/* Hover effects */
-
 .stats-table-row:hover {
-  background-color: lightgray; /* Change background color on hover */
+  background-color: lightgray; 
 }

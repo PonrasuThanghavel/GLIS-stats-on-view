@@ -5,7 +5,7 @@ import './css/Crop.css';
 const Crop = ({ crop, quantity, incrementQuantity, decrementQuantity, deleteCrop }) => {
   
   const getClassByQuantity = (quantity) => {
-    if (quantity <= 50) {
+    if (quantity <= 25) {
       return 'low';
     } else if (quantity >= 100) {
       return 'high';
