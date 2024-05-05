@@ -32,6 +32,10 @@ const PieChart = () => {
     chart: {
       type: 'pie',
     },
+    title: {
+      text: 'PieChart of Size Distribution in Acres',
+      align: 'center'
+    },
     labels: sizeData.map(item => item.label),
     dataLabels: {
       enabled: false,
@@ -42,7 +46,6 @@ const PieChart = () => {
 
   return (
     <div className="dashboard-card">
-      <h2 className='graph-card-header'>Pie Chart: Size Distribution in Acres</h2>
       {loading ? (
         <div className="loading-animation">
           <Lottie animationData={require('../../../assets/animations/loading.json')} loop autoplay />

@@ -36,8 +36,23 @@
   border: 3px inset lightseagreen;
 }
 
+.region-sort-btn{
+  height: 25px;
+  width: 150px;
+  font-size: 16px;
+  text-align: center;
+  margin: 5px 0px 0px 25px;
+  border-radius: 10px;
+  border: 3px inset lightseagreen;
+}
+
 .sort-option{
   background-color: white;
+}
+
+.sort-icon{
+  transform: translateY(-13px);
+  color: lightseagreen;
 }
 
 .tableview-container {

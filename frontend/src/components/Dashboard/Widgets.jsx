@@ -67,7 +67,7 @@ const ScatterPlot = ({ title }) => {
       ) : error ? (
         <div className="error-message">{error}</div>
       ) : (
-        <Chart options={options} series={[{ data: scatterData }]} type="scatter" height={400} />
+        <Chart options={options} series={[{ data: scatterData }]} type="scatter" height={300} />
       )}
     </div>
   );

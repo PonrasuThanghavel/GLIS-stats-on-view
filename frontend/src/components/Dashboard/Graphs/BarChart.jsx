@@ -16,11 +16,11 @@ const BarChart = () => {
           y: item['FloodRiskScore']
         }));
         setBarData(newData);
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false); 
       })
       .catch(error => {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false in case of an error
+        setLoading(false); 
       });
   }, []);
 
@@ -45,7 +45,7 @@ const BarChart = () => {
     },
     tooltip:
     {
-      enabled: false,
+      enabled: true,
     }
   };
 

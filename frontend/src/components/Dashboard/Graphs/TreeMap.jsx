@@ -43,7 +43,8 @@ const TreemapChart = () => {
       data: seriesData,
     }],
     title: {
-      text: 'Treemap: Count of Different Zones'
+      text: 'Treemap: Count of Different Zones',
+      align: 'center'
     },
     tooltip: {
       enabled: true,

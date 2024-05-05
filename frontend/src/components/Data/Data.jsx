@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaArrowRight } from 'react-icons/fa6';
+import { FaArrowRight, FaSort } from 'react-icons/fa6';
 import { Link } from 'react-router-dom'; // Import Lin
 import './css/Data.css'
 
@@ -78,6 +78,7 @@ const TableView = () => {
           <option value="Zone_type">Zones</option>
         </select>
 
+        <h3><FaSort className='sort-icon'/></h3>
       </div>
   
       <table className='tableview-container'>

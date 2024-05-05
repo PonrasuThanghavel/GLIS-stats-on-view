@@ -52,6 +52,7 @@ const LineChart = () => {
     const seriesData = data.map(station => ({
       x: station.Rev,
       y: station.Size,
+      name: station.Name
     }));
 
     const options = {
@@ -60,6 +61,10 @@ const LineChart = () => {
         zoom: {
           enabled: false,
         },
+      },
+      title: {
+        text: 'Scatter Plot of Size vs Revenue',
+        align: 'center'
       },
       xaxis: {
         title: {
@@ -74,10 +79,13 @@ const LineChart = () => {
       tooltip: {
         enabled: true,
         intersect: false,
+        align: 'left',
         custom: function({ series, seriesIndex, dataPointIndex, w }) {
-          const { x, y } = w.config.series[seriesIndex].data[dataPointIndex];
+          const { x, y, name } = w.config.series[seriesIndex].data[dataPointIndex];
           return (
             '<div class="tooltip">' +
+            '<span>Name: ' + name + '</span>' +
+            '<br>' +
             '<span>Revenue: ' + x + '</span>' +
             '<br>' +
             '<span>Size: ' + y + '</span>' +
@@ -92,7 +100,6 @@ const LineChart = () => {
 
   return (
     <div className="dashboard-card">
-      <h2 className='graph-card-header'>Size vs Revenue</h2>
       {renderChart()}
     </div>
   );
